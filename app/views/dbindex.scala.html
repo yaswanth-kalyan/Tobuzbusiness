@@ -1,0 +1,638 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(appUser : models.AppUser)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Tobuz Dashboard") {
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/customDashboard.css")">
+
+@navbar(appUser,"Dashboard")
+<section class="maintab_bar">
+ 
+  @dbAsideNavbar("Dashboard")
+   <div class="col-md-10 col-sm-10 col-xs-10 mainsidebar_dash_content">
+              
+                           
+                          
+                             <div class="carousel_section_center">
+                                  <div class="user_profile_details">
+                                       <div class="row">
+                                                 <div class="col-md-3 col-xs-12">
+                                                   <div class="media media_borleft">
+                                                              <div class="media-left">
+                                                                <img src="@routes.Assets.versioned("images/Asset 27.png")" class="media-object" width="50px">
+                                                              </div>
+                                                              <div class="media-body">
+                                                                <p class="media-heading user_profile_name">Steve Sodenberg</p>
+                                                                <p>Buyer</p>
+                                                              </div>
+                                                            </div>
+                                                 </div>
+                                                 <div class="col-md-9 col-xs-12">
+                                                       <div class="row">
+                                                             <div class="col-md-6 col-xs-12 hidden-xs user_profile_rmpd">
+                                                                <div class="user_profile_align">
+                                                                   <div class="row">
+                                                                     <div class="col-md-3 user_profile_rmpd">
+                                                                        <span class="profile_details_borbtm">Favourites</span>
+                                                                         <br>
+                                                                         <span class="profile_details_num_fav">08</span>
+                                                                     </div>
+                                                                     <div class="col-md-3 user_profile_rmpd">
+                                                                         <span class="profile_details_borbtm">Listings</span><br>
+                                                                         <span class="profile_details_num_lis">03</span>
+                                                                     </div>
+                                                                     <div class="col-md-3 user_profile_rmpd">
+                                                                         <span class="profile_details_borbtm">Saved Serch</span><br>
+                                                                         <span class="profile_details_num_ss">23</span>
+                                                                     </div>
+                                                                     <div class="col-md-3 user_profile_rmpd">
+                                                                         <span class="profile_details_borbtm">Messages</span><br>
+                                                                         <span class="profile_details_num_mes">08</span>
+                                                                     </div>
+                                                                   </div>
+                                                                   </div>
+                                                             </div>
+                                                             <div class="col-md-6 col-xs-12 current_package_col">
+                                                                  <div class="pull-right current_package_align">
+                                                                  <span class="current_package_para">Current package: Free Listing </span><a href="/packages"><button class="btn btn-default btn_current_package">Upgrade Package</button></a>
+                                                                  </div>
+                                                             </div>
+                                                       </div>
+                                                 </div>
+                                       </div>
+                                </div>
+
+                                  <div class="Featured_list_padl">
+                                  <h2><span>Featured</span> Listings</h2>
+                                  </div>
+                                        <div id="Carousel" class="carousel slide" data-interval="3000">
+                                         
+                                        <!-- <ol class="carousel-indicators">
+                                            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#Carousel" data-slide-to="1"></li>
+                                            <li data-target="#Carousel" data-slide-to="2"></li>
+                                        </ol> -->
+                                         
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            
+                                        <div class="item active">
+                                          <div class="row">
+                                            <div class="col-md-3">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            
+                                          </div><!--.row-->
+                                        </div><!--.item-->
+                                         
+                                        <div class="item">
+                                          <div class="row">
+                                            <div class="col-md-3">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            
+                                          </div>
+                                        </div><!--.item-->
+                                         
+                                        <div class="item">
+                                          <div class="row">
+                                            <div class="col-md-3">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/newItemBd.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right wishlist_futrlist"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            
+                                          </div>
+                                        </div><!--.item-->
+                                         
+                                        </div><!--.carousel-inner-->
+                                          <a data-slide="prev" href="#Carousel" class="left carousel-control"><span class="blueArrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
+                                          <a data-slide="next" href="#Carousel" class="right carousel-control"><span class="blueArrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+                                        </div><!--.Carousel-->
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                  <!-- <div class="Featured_list_padl">
+                                  <h2><span>Urgent</span> Sale Listings</h2>
+                                  </div> -->
+                                  <div class="urgent_carosel_menu">
+                                  <div class="row">
+                                     <div class="col-md-9 urgent_carosel_menu_rmpd">
+                                          <div class="Featured_list_padl">
+                                          <h2><span>Urgent</span> Sale Listings</h2>
+                                          </div>
+                                  <div id="Carousell" class="carousel slide" data-interval="3000">
+                                         
+                                        <!-- <ol class="carousel-indicators">
+                                            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#Carousel" data-slide-to="1"></li>
+                                            <li data-target="#Carousel" data-slide-to="2"></li>
+                                        </ol> -->
+                                         
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            
+                                        <div class="item active">
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                          <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                      <div class="thumbnail no-padding">
+                                                     <div class="sold_overlay"><h3>SOLD</h3></div>
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                          <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                     <div class="thumbnail no-padding">
+                                                     <div class="sold_overlay"><h3>SOLD</h3></div>
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                          <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                          </div><!--.row-->
+                                        </div><!--.item-->
+                                         
+                                        <div class="item">
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                          <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                          </div>
+                                        </div><!--.item-->
+                                         
+                                        <div class="item">
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                            
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                     <div class="thumbnail no-padding">
+                                                        <a href="#" target="_blank">
+                                                        <img src="@routes.Assets.versioned("images/tobuzBD.png")" width="100%" height="100%" class="img img-responsive tobuzOverlay">
+                                                        <img src="@routes.Assets.versioned("images/hotItemBD.png")" width="" height="" class="img img-responsive customBadge">
+                                                          <img src="@routes.Assets.versioned("images/Asset-29.png")" width="100%" height="100%" class="img img-responsive listing-img">
+                                                          <div class="caption listing-caption listing_caption_dash">
+                                                            <h4>Dickwella Resort &amp; Spa</h4>
+                                                            <h6 class='font-normal listings-actions'>Relax, explore and indulge with a package</h6>
+                                                            <h5 class="listings_rate">INR 3,00,000</h5>
+                                                          </div>
+                                                            <div class="listing-action-box">
+                                                                <h6 class="font-normal">
+                                                            <button class="btn btn-lg btn-md btn-sm btn-info contact_business_button"> <i class="fa fa-bookmark-o book-color" aria-hidden="true"></i> &nbsp  &nbspContact Business</button>
+                                                                 <span class="pull-right"><img src="@routes.Assets.versioned("images/icon 2.png")" width="32%"> 50</span>
+                                                                </h6>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                          </div>
+                                        </div><!--.item-->
+                                         
+                                        </div><!--.carousel-inner-->
+                                          <a data-slide="prev" href="#Carousell" class="left carousel-control urgent_sale_leftcarousel"><span class="blueArrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
+                                          <a data-slide="next" href="#Carousell" class="right carousel-control urgent_sale_rightcarousel"><span class="blueArrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+                                        </div><!--.Carousel-->
+                                  
+                                  
+                                  </div>
+                                  <div class="col-md-3">
+                                           <div class="advertise-sec">
+                                          <!--  <img src="@routes.Assets.versioned("images/Artboard 71@2x.png")" class="img-responsive advertise-img">
+                                           </div> -->
+                                  </div>
+                                </div>
+                                  </div>
+           
+                    <div class="Featured_list_padl">
+                                  <h2><span>Business</span> Solutions</h2>
+                    </div>
+                    <div class="row bs-flex">
+                    <div class="col-md-5 col-xs-12 busi_sol_rmpd no-right-padding">
+                        <img src="@routes.Assets.versioned("images/bs.png")" class="img img-responsive business_sol_img"/>
+                    </div>
+                    <div class="col-md-7 col-xs-12 busi_sol_rmpd no-left-padding">
+                        <ul class="nav nav-tabs bs-tabs busi_navtabs">
+                             <li class="active"><a data-toggle="tab" href="#services">Business Services</a></li>
+                            <li><a data-toggle="tab" href="#valuation">Business Valuation</a></li>
+                        </ul>
+
+                          <div class="tab-content bs-tab-content bs-tab-content-dash">
+                            <div id="services" class="tab-pane fade in active">
+                              <h3><span>Business </span>Services</h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget aliquet orci. Nullam dignissim, nibh quis maximus iaculis, lacus mi rhoncus leo, non bibendum nisl lectus quis enim. Vestibulum tincidunt venenatis turpis non ullamcorper. Mauris dolor turpis, hendrerit quis ultricies noncommodo consequat.<br><br> fermentum ac urna. Donec quis faucibus turpis, ornare venenatis arcu. Cras convallis mauris tellus, sed molestie odio hendrerit non. Nullam id dui et diam vulputate tempor sed volutpat eros. Sed efficitur, ligula sit amet ultrices sagittis, nulla erat laoreet orci, a auctor quam est eu nisi. Donec sollicitudin mauris libero, at accumsan massa porttitor vel. Etiam ac orci nec ipsum aliquam scelerisque vitae vel velit.</p>
+                              <div class="pull-right"><button class="btn readmore_btn_dash readMoreBtn readMoreBtn_ip">Read More <i class="fa fa-arrow-right readMoreArrow" aria-hidden="true"></i></button></div>
+                            </div>
+                            <div id="valuation" class="tab-pane fade">
+                              <h3><span>Business </span>Valuation</h3>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget aliquet orci. Nullam dignissim, nibh quis maximus iaculis, lacus mi rhoncus leo, non bibendum nisl lectus quis enim. Vestibulum tincidunt venenatis turpis non ullamcorper. Mauris dolor turpis, hendrerit quis ultricies noncommodo consequat.<br><br> fermentum ac urna. Donec quis faucibus turpis, ornare venenatis arcu. Cras convallis mauris tellus, sed molestie odio hendrerit non. Nullam id dui et diam vulputate tempor sed volutpat eros. Sed efficitur, ligula sit amet ultrices sagittis, nulla erat laoreet orci, a auctor quam est eu nisi. Donec sollicitudin mauris libero, at accumsan massa porttitor vel. Etiam ac orci nec ipsum aliquam scelerisque vitae vel velit.</p>
+                               <div class="pull-right"><button class="btn readmore_btn_dash readMoreBtn_ip">Read More <i class="fa fa-arrow-right readMoreArrow" aria-hidden="true"></i></button></div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+   </div>
+
+
+   </div>
+
+ </section>
+
+}
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
+ <script src="@routes.Assets.versioned("javascripts/register.js")" type="text/javascript"></script>
+
+
+ 

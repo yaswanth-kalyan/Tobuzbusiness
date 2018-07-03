@@ -1,0 +1,131 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(appUser : models.AppUser)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Tobuz Dashboard") {
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/customDashboard.css")">
+
+@navbar(appUser,"Dashboard")
+
+ <section class="maintab_bar">
+  @dbAsideNavbar("Messages")
+   <div class="col-md-10 col-xs-10 mainsidebar_dash_content" ng-controller="myCtrl">
+
+        <div class="list_landingpage">
+            <div class="row line_height">
+                <div class="col-md-12 Featured_list_padl">
+                    <h2 class="messages_text"><span>Messa</span>ges</h2>
+                </div>
+            </div>
+        </div>  
+        <div class="message_container">
+        	<div class="row">
+        		<div class="col-md-4 Msg_zero_pad_right">
+        			<div class="chat_listmembers">
+        				<div class="chat_search">
+        					<i class="fa fa-search chat_search_icon"></i>
+        					<input type="text" class="form-control chat_search_text" palceholder="Search Conversation">
+        				</div>
+        				
+        				<div class="chat_members"  >
+        					<ul class="list_memb" >
+        						<li ng-repeat="x in records track by $index"  ng-click="userMessage($index)">
+       								<div class="chatting_person" >
+       								<div class="row">
+       								
+       											
+       									<div>
+													
+													<div class="col-md-3">
+       											<img src="/assets/images/Asset 27.png" class="media-object" width="40px">
+       										</div>
+       										<div class="row"><div class="col-md-5 " >
+       										<div class="user_profile_name" > {{ name=x.Name}}</div>
+  											<div>{{x.message}}</div></div>
+  															
+  												<div class="col-md-3 text-right">
+       											
+       												<div><span class="badge custom_badge_message">5</span></div>
+       												<div>10:37AM </div>
+												</div>		
+       										</div>
+       									      						
+       							</li></ul>
+        				</div>
+        			
+        			</div>
+        		</div>
+        		<div class="col-md-8 Msg_zero_pad_left" >
+        			<div class="user_messages"  >
+        				<div class="user_details">
+        					<div class="user_desc">
+        						<h4>{{usrName}}</h4>
+        						
+        					</div>
+        					<div class="date_desc">
+        						<div class="date_hr_line">
+							      <span>
+							        09-10-17
+							      </span>
+							    </div>
+        					</div>
+        					<div class="user_desc date_desc" ng-repeat="msg in obj.msgs" >
+        						<div class="media" >
+								    <div class="media-left media-bottom">
+								      <img src="/assets/images/Asset 27.png" class="media-object" width="40px">
+								    </div>
+								    <div class="media-body">
+								    
+								      <div class="clip_path">{{msg}}</div>
+								    </div>
+								  
+								    <div class="media-body">
+								      <div class="left_clip_patth" >
+								      <div class="flipped_text" >{{obj.Mymsgs[$index]}}</div></div>
+								    </div> </div></div>
+								     <div class="media-body" id="divID">
+								      
+								   
+								  
+        					</div>
+        					
+        					
+        					
+        					<div class="send_mesg_container" >
+        						<div class="row">
+        							<div class="col-md-4"><div  class="uploadFile"><input  type="file" multiple="multiple" name="" accept="image/*" class="input-file"></div></div>
+        						</div>
+        						<div class="row" >
+        							<div class="send_messg" >
+        								<div class="col-md-10">
+        								<textarea class="form-control" placeholder="Type something and send.." ng-model="chat" name="chat" id="chatbox"></textarea>
+        							</div>
+        							<div class="col-md-2">
+        								<button class="send_message_btn" ng-click="sendMessage(chat)">Send <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        							</div>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+        				
+        			</div>
+        			
+        		</div>
+        	</div>
+        </div>    
+
+   </div>
+ </section>
+
+}
+
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
+ <script src="@routes.Assets.versioned("javascripts/register.js")" type="text/javascript"></script>

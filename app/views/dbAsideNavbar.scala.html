@@ -1,0 +1,25 @@
+@(name : String)
+ <div class="col-md-2 col-sm-10 col-xs-2 mainsidebar_dash">
+           <ul class="db-links">
+           <!--  <li><a href="/dashboard/home"><i> <img width="15px" src="@routes.Assets.versioned("images/Asset 20@2x.png")""> </i> <span class="mb-nodisplay"> My Dashboard</span></a></li>
+            <li><a href="/dashboard/listings"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 19@2x.png")""></i> <span class="mb-nodisplay"> My Adverts</span></a></li>
+            <li><a href="/dashboard/favorites"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 18@2x.png")""> </i> <span class="mb-nodisplay"> Favorites</span></a></li>
+            <li><a href="/dashboard/saved_search"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 17@2x.png")""> </i> <span class="mb-nodisplay"> Saved Serch</span></a></li>
+            <li><a href="/dashboard/messages"><i><img width="16px" src="@routes.Assets.versioned("images/Asset 16@2x.png")""> </i> <span class="mb-nodisplay"> Messages <span class="badge custom_badge pull-right">223</span></span></a></li>
+            <li><a href="/dashboard/upd_profile"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 15@2x.png")""> </i><span class="mb-nodisplay"> Updated Profile</span></a></li> -->
+            <li @if(name == "Dashboard"){class="active"}><a href="/dashboard/home"><i> <img width="15px" src="@routes.Assets.versioned("images/Asset 20@2x.png")""> </i> <span class="mb-nodisplay"> My Dashboard</span></a></li>
+            <li @if(name == "Adverts"){class="active"}><a href="/dashboard/listings"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 19@2x.png")""></i> <span class="mb-nodisplay"> My Adverts</span></a></li>
+            <li @if(name == "Favorites"){class="active"}><a href="/dashboard/favorites"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 18@2x.png")""> </i> <span class="mb-nodisplay"> Favorites</span></a></li>
+            <li @if(name == "Saved"){class="active"}><a href="/dashboard/saved_search"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 17@2x.png")""> </i> <span class="mb-nodisplay"> Saved Serch</span></a></li>
+            <li @if(name == "Messages"){class="active"}><a href="/dashboard/messages"><i><img width="16px" src="@routes.Assets.versioned("images/Asset 16@2x.png")""> </i> <span class="mb-nodisplay"> Messages <span class="badge custom_badge pull-right">223</span></span></a></li>
+            <li @if(name == "Profile"){class="active"}><a href="/dashboard/upd_profile"><i><img width="15px" src="@routes.Assets.versioned("images/Asset 15@2x.png")""> </i><span class="mb-nodisplay"> Updated Profile</span></a></li>
+          </ul>
+   </div>
+<!--    <script type="text/javascript">
+   	var selector = '.db-links li';
+
+	$(selector).on('click', function(){
+	    $(selector).removeClass('active');
+	    $(this).addClass('active');
+	});
+   </script> -->

@@ -1,0 +1,175 @@
+@()
+@import java.lang.Integer; var index = 0;
+
+@main(""){
+
+
+<div class="packages_margin_bootom">
+</div>
+@flagSection()
+<section class="select_package">
+            <div class="container">
+                <div class="row seller_package_radio_mrg25">
+                  <div class="col-md-4 text-center">
+                           <label class="radio-inline">
+                           <input type="radio" name="optradio" ng-model="formListing.listingType" value="BUSINESS" id="lookBusiness"  ng-click="getCategoryDetails('BUSINESS');"><label for="lookBusiness">Business</label>
+                  </label>
+                  </div>
+                  <div class="col-md-4 text-center">
+                        <label class="radio-inline ">
+                  <input type="radio" name="optradio" ng-model="formListing.listingType" value="COMMERCIAL" id="lookCommercial" ng-click="getCategoryDetails('COMMERCIAL');"><label for="lookCommercial">Commercial</label>
+                </label>  
+                  </div>
+                  <div class="col-md-4 text-center">
+                      <label class="radio-inline">
+                  <input type="radio" name="optradio" ng-model="formListing.listingType" value="FRANCHISE" id="lookFranchise" ng-click="getCategoryDetails('FRANCHISE');"><label for="lookFranchise">Franchise Resale</label>
+                </label>
+                  </div>
+                </div>
+                <div class="row mb-40 table-responsive table_margin_responsive">
+                   <!-- <h1 class="select_a_package_heading">Select A Package</h1> -->
+                   <table class="table select_package_table table-bordered">
+                     <thead>
+                       <tr>
+                         <th colspan="5"> <h1 class="select_a_package_heading">Select A Package</h1></th>
+                       </tr>
+                       <tr>
+                           <th class="col-md-4">
+                               <h3 class="pdx-15 blue-color">Features</h3>
+                           </th>
+                           <th class="select_package_row select_package_free col-md-2 text-center">
+                                <div>
+                                    <h4>FREE</h4>
+                                    <div class="select_package_free_desc">
+                                        <h4>UNTILL UPGRADE : </h4>
+                                        <ul>
+                                            <li>Contact details of seller not displayed</li>
+                                            <li>Cant have a Business Wanted Advert</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                           </th>
+                          <th class="select_package_row select_package_bronze col-md-2 text-center">
+                                <div>
+                                    <h4>BRONZE</h4>
+                                    <div class="select_package_free_desc">
+                                        <h1><span>$</span> 50</h1>
+                                        <span>6 Months</span>
+                                    </div>
+                                </div>
+                           </th>
+                          <th class="select_package_row select_package_silver col-md-2 text-center">
+                                <div>
+                                    <h4>SILVER</h4>
+                                    <div class="select_package_free_desc">
+                                        <h1><span>$</span> 50</h1>
+                                        <span>6 Months</span>
+                                    </div>
+                                </div>
+                           </th>
+                           <th class="select_package_row select_package_gold col-md-2 text-center">
+                                <div>
+                                    <h4>GOLD</h4>
+                                    <div class="select_package_free_desc">
+                                        <h1><span>$</span> 75</h1>
+                                        <span>Until Sold</span>
+                                    </div>
+                                </div>
+                           </th>
+                       </tr>
+                     </thead>
+                      <tbody>
+                      <tr>
+                             <td data-label="Features"><div>Personalised Dashboard<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                             <td data-label="Features"><div>Unlimited Business Description<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                             <td data-label="Features"><div>Upload images<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Vedio Link<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                            <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Upload Files<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                              <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Real Time Ad Editing<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Social Media Email Marketing<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Connect To Buyers<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Featured Listings<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Add on Business Services<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Verified Listing<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td data-label="Features"><div>Dedicated Online Manager<span class="pull-right" data-toggle="tooltip" data-placement="top" title="A complete online Marketplace made to connect Business & Property Owners with Investors and Business Advisors hence providing a Wholesome Business solution"><i class="fa fa-info"></i></span></div></td>
+                             <td data-label="Free"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Bronze"><span class="package-no"><i class="fa fa-times"></i></span></td>
+                             <td data-label="Silver"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                             <td data-label="Gold"><span class="package-yes"><i class="fa fa-check"></i></span></td>
+                          </tr>
+                      </tbody>
+                   </table>
+                </div>
+            </div>
+        </section>
+
+}
+
+ <script src="@routes.Assets.versioned("javascripts/packages.js")" type="text/javascript"></script>
+<script src="@routes.Assets.versioned("javascripts/register.js")" type="text/javascript"></script>

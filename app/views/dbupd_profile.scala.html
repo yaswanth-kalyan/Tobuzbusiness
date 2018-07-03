@@ -1,0 +1,232 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(appUser : models.AppUser)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Tobuz Dashboard") {
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/customDashboard.css")">
+
+@navbar(appUser,"Dashboard")
+
+ <section class="maintab_bar">
+ @dbAsideNavbar("Profile")
+   <div class="col-md-10 col-xs-10 mainsidebar_dash_content">
+             <div class="row main_content_pad">
+			    <div class="col-md-11 col-sm-11 col-xs-10">
+			        <div class="right-inner-addon">
+			            <span><i class="fa fa-search icon-search"></i></span>
+			            <input type="search" class="form-control searchBar searchBar_ip" placeholder="Ex:Business for Sale">
+			        </div>
+			    </div>
+			    <div class="col-md-1 col-sm-1 col-xs-2">
+			        <button class="btn btn primary pull-right searchBtn">search</button>
+			        <!-- <span><i class="icon-search"></i></span> -->
+			    </div>
+			</div>
+			<div class="row asideSample hidden-xs">
+			    <div>
+			        <div class="col-md-9 pdg_remove">
+			            <!-- <ul class="nav nav-pills main_content_tabs">
+			                                    <li class="active"><a data-toggle="pill" href="#home">Buyer</a></li>
+			                                    <li><a data-toggle="pill" href="#menu1">Seller</a></li>
+			                                    <li><a data-toggle="pill" href="#menu2">Business Frachise</a></li>
+			                                     <li><a data-toggle="pill" href="#menu3">Commerial Property</a></li>
+			                                    <li><a data-toggle="pill" href="#menu4">Business Directory</a></li>
+			                                    <li><a data-toggle="pill" href="#menu5">Brokers</a></li>
+			                                    <li><a data-toggle="pill" href="#menu6">Distress Resale</a></li>
+			                                  </ul> -->
+			            <div class="collapse navbar-collapse Zero-padding main_content_tabs" id="navbar-collapse-1">
+			                <ul class="nav navbar-nav dbNav">
+			                    <li><a href="#">Buyer</a></li>
+			                    <li><a href="#">Seller</a></li>
+			                    <li><a href="#">Business Frachise</a></li>
+			                    <li><a href="#">Commerial Property</a></li>
+			                    <li><a href="#">Business Directory</a></li>
+			                    <li><a href="#">Brokers</a></li>
+			                    <li><a href="#">Distress Resale</a></li>
+			                </ul>
+			            </div>
+			        </div>
+			        <div class="col-sm-3">
+			            <div class="socialShare pull-right">
+			                <div class="col-md-2 col-sm-2 fa-Blue">
+			                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			                </div>
+			                <div class="col-md-2 col-sm-2 fa-Blue">
+			                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+			                </div>
+			                <div class="col-md-2 col-sm-2 fa-Blue">
+			                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+			                </div>
+			                <div class="col-md-2 col-sm-2 fa-Blue">
+			                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			                </div>
+			                <div class="col-md-2 col-sm-2 fa-Blue">
+			                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="carousel_section_center business-listing">
+			        <div class="favourites_byerlist Featured_list_padl">
+			             <h2><span>Profile</span> </h2>
+			        </div>
+			        <div class="saved_search_profle_form">
+
+			          <div class="row upprofle_rowflex" ng-controller="updateProfileCntrl" ng-init="getUserUpdateData()">
+			                 <div class="col-md-4 profile_img_borleft text-center">
+			                      <img ng-src="{{showProfileImage?uploadme:('@routes.Assets.versioned("images/Asset 27.png")')}}" class="media-object profile-pic"  alt="Upload Your Image">
+                                    <div class="user_profile_img" id="upd-file-upload" ng-click="showUpdImage()">
+										   <input class="file-upload file_upload" type="file" accept="image/*" fileread="uploadme"/>
+                                    </div>
+                                    <div ng-show="showConf" class="mb-10">
+									   	<h6>Are you sure you want to upload this ?</h6>
+									   	<i class="fa fa-check-circle hand fa-success" aria-hidden="true" ng-click="uploadImage()"></i>
+									   	<i class="fa fa-times-circle hand fa-danger" aria-hidden="true" ng-click="showConf=false"></i>
+								   </div>
+			                       <p>@if(appUser != null){@appUser.getName()}</p>
+			                       <span>@if(appUser != null){@appUser.getRole().getUserRole().capitalize()}</span>
+			                       <hr>
+			                       <div class="saved_search_proflie_currentpkg">
+			                                <span class="current_package_para">Current package: @if(appUser != null && appUser.getUserCurrentActivatedPackage() != null){@appUser.getUserCurrentActivatedPackage().getTobuzPackageType().capitalize() Package} </span><br>
+			                                <a href="/packages"><button class="btn btn-default btn_current_package">Upgrade Package</button></a>
+			                       </div>
+			                 </div>
+			                 <div class="col-md-8 col-xs-12" ng-controller="updateProfileCntrl" ng-init="getUserUpdateData()">
+
+			                    <form class="form-horizontal listing-form listing-form-savedserch">
+			                    	<input type="hidden" ng-model="updatedProfile.updImageId" />
+			                       <div class="form-group list-form-group">
+			                          <!-- <label class="control-label col-sm-3" for="pwd">Name</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.name" >
+			                          </div> -->
+			                          <div  class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/name-icon.png")" class="img img-rresponsive img-icon" /></span>
+				                        <input  type="text" class="form-control" name="name" value="" placeholder="Name" ng-model="updatedProfile.name">
+				                    </div>
+			                       </div>
+			                       <div class="form-group list-form-group">
+			                         <!--  <label class="control-label col-sm-3" for="pwd">Phone Number</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.mobileNumber">
+			                          </div> -->
+			                          <div  class="input-group">
+				                         <span class="input-group-addon">
+				                         	<select class="selectpicker" name="mobileDerivedCountryId" ng-model="updatedProfile.countryCode" >
+				                         	<option ng-repeat="country in countries" value="{{country.dailingCode}}">{{country.dailingCode}}</option>
+				                        </select>		
+				                         </span>
+				                        <input id="register-phoneNumber" type="text" class="form-control" name="mobileNumber"  placeholder="Phone number" ng-model="updatedProfile.mobileNumber">
+				                    </div>
+			                       </div>
+			                        <div class="form-group list-form-group">
+			                          <!-- <label class="control-label col-sm-3" for="pwd">City</label>
+			                          <div class="col-sm-8">  
+			                               <select type="text" class="form-control" ng-model="updatedProfile.cityId">
+			                               <option value="{{city.cityId}}" ng-repeat="city in cities">{{city.name}}</option>
+			                               </select>
+			                          </div> -->
+			                          <div  class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/city-icon.png")" class="img img-rresponsive img-icon" /></span>
+				                        <!-- <input id="address-city" type="text" class="form-control" name="cityId" value="" placeholder="City"> -->
+				                        <select type="text" class="form-control"  ng-model="selectedCityId" ng-options="city.name for city in cities">
+			                               </select>
+				                    </div>
+			                       </div>
+			                       <div class="form-group list-form-group">
+			                          <!-- <label class="control-label col-sm-3" for="pwd">State</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.stateName" >
+			                          </div> -->
+			                          <div class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/state-icon.png")" class="img img-rresponsive img-icon" /></span>
+				                        <input id="address-sate-name" type="text" class="form-control" name="stateName" placeholder="State" ng-model="updatedProfile.stateName" readonly>
+				                         <input id="address-sate-id" type="hidden" class="form-control" name="stateId" placeholder="State" autocomplete="off" ng-model="updatedProfile.stateName">
+				                    </div>
+			                       </div>
+			                       <div class="form-group list-form-group">
+			                          <!-- <label class="control-label col-sm-3" for="pwd">Country</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.countryName">
+			                          </div> -->
+			                          <div  class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/country-icon.png")" class="img img-rresponsive img-icon" /></span>
+				                        <input id="address-sate-name" type="text" class="form-control" name="countryName" placeholder="Country" ng-model="updatedProfile.countryName" readonly>
+				                         <input id="address-sate-id" type="hidden" class="form-control" name="countryId" placeholder="Country" autocomplete="off" >
+				                    </div>
+			                       </div>
+			                       <div class="form-group list-form-group">
+			                         <!--  <label class="control-label col-sm-3" for="pwd">Pincode</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.pincode">
+			                          </div> -->
+			                          <div  class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/pincode-icon.png")" class="img img-rresponsive img-icon" /></span>
+				                        <input id="address-Zipcode" type="text" class="form-control" name="pincode" placeholder="Zipcode" ng-model="updatedProfile.pincode">
+				                    </div>
+			                       </div>
+			                       <div class="form-group list-form-group">
+			                          <!-- <label class="control-label col-sm-3" for="pwd">Address</label>
+			                          <div class="col-sm-8">  
+			                               <input type="text" class="form-control" ng-model="updatedProfile.addressDescription">
+			                          </div> -->
+			                          <div class="input-group">
+				                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/address-icon.png")" class="img img-rresponsive img-icon" /></i></span>
+				                        <input id="address-Country-name" type="text" class="form-control" name="addressName" placeholder="Address" ng-model="updatedProfile.addressDescription">
+				                         <input id="address-Country-id" type="hidden" class="form-control" name="addressName" placeholder="Address" autocomplete="off">
+				                    </div>
+			                       </div>
+			                       <input type="hidden" ng-model="updatedProfile.userId"/>
+			                       <input type="hidden" ng-model="updatedProfile.addressId"/>
+			                       <div class="form-group list-form-group text-center">
+			                           <button class="btn btn primary searchBtn profileUpdate_btn" ng-click="profileUpdate()">Update</button>
+			                       </div>
+			                       
+			                    </form>
+			                 </div>
+			          </div>
+			        </div>
+			</div>
+             
+    
+   </div>
+
+ </section>
+
+}
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
+ <script src="@routes.Assets.versioned("javascripts/register.js")" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+            	$('.profile-pic').attr('src', e.target.result);
+                // $('.div-change-pic').attr("style","background-image:url("+e.target.result+");");
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+});
+</script>
+
+

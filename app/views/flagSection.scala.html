@@ -1,0 +1,124 @@
+<section class="flag-section flag_section_marginremove">
+    <div class="container hidden-xs">
+        <div class="row mt-40 mb-40">
+        @for(country <- models.Country.countryList()){
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#"><img src="/assets/images/flags/@country.getFlagName()" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                    <a href="#">  <p> @country.getName() </p></a>
+                </div>
+            </div>
+            }
+            <!-- <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#"><img src="@routes.Assets.versioned("images/flags/pakistan.png")" class="img img-responsive" /></a></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                      <a href="#"><p> Pakistan </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                      <a href="#"><img src="@routes.Assets.versioned("images/flags/bangladesh.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                    <a href="#">  <p> Bangladesh </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                    <a href="#">  <img src="@routes.Assets.versioned("images/flags/australia.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                    <a href="#">  <p> Australia </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                    <a href="#">  <img src="@routes.Assets.versioned("images/flags/srilanka.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                    <a href="#"> <p> Srilanka </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                    <a href="#">  <img src="@routes.Assets.versioned("images/flags/singapore.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                      <a href="#"><p> Singapore </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                    <a href="#">  <img src="@routes.Assets.versioned("images/flags/uae.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                      <a href="#"><p> UAE </p></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-40 mb-40">
+
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/australia.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> New Zealand </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/Thailand.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> Thailand </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/Saudi Arabia.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> Saudi Arabia </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/Bahrain.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> Bahrain </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/oman.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> Oman </p></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                  <a href="#">  <img src="@routes.Assets.versioned("images/flags/england.png")" class="img img-responsive" /></a>
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> England </p></a>
+                </div>
+            </div> -->
+            <div class="col-md-2 col-sm-2 flag-width">
+                <div class="col-md-6 no-padding">
+                    <img src="@routes.Assets.versioned("images/flags/worldwide.png")" class="img img-responsive" />
+                </div>
+                <div class="col-md-6 pdl-5">
+                  <a href="#">  <p> WorldWide </p> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

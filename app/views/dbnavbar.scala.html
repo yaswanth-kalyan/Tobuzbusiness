@@ -1,0 +1,58 @@
+@(appUser : models.AppUser, name:String)
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-trans nav-bg">
+<div class=" navbar_dash ">
+  <div class="container-fluid con_pdl_res">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbrand_dashboard" href="#"><img src="@routes.Assets.versioned("images/white-logo.png")" class="img img-responsive logo-img logoimg-dash" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">HOMES</a></li>
+        <li><a href="#">HOW IT WORKS</a></li>
+        <li><a href="#">BUSINESS FOR SALE</a></li>
+        <li><a href="#">PROPERTY FOR SALE</a></li>
+        <li><a href="#">FRANCHISE FOR SALE</a></li>
+        <li><a href="#">BUYERS/INVESTORS</a></li>
+        <li><a href="#">BUSINESS SERVICES</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="@routes.Assets.versioned("images/flags/australia.png")" class="img img-responsive nav-flag-img"/> Aus <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu country-dropdown-menu">
+            @for(country <- models.Country.countryList()){
+              <li><a href="#"><img src="/assets/images/flags/@country.getFlagName()" class="img img-responsive nav-flag-img" /><span class="country-name">@country.getName()</span></a></li>
+              }
+            <!--   <li><a href="#">Australia</a></li>
+              <li><a href="#">England</a></li> -->
+            </ul>
+        </li>
+        <li><a href="#">
+              <i><img width="17px" src="@routes.Assets.versioned("images/Asset 21@2x.png")""> </i></i>
+              <span class="label label-danger label_dash">4</span>
+            </a>
+        </li>
+        <li><a href="#">
+              <i><img width="17px" src="@routes.Assets.versioned("images/Asset 22@2x.png")""> </i></i>
+              <span class="label label-warning label_dash">10</span>
+            </a>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img  alt="User Image" class="img-circle" width="20px;" src="@routes.Assets.versioned("images/user.jpg")"><span>@if(appUser != null){@appUser.getName()} <i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+            <ul class="dropdown-menu">
+            
+              <li><a href="/dashboard/upd_profile">Profile</a></li>
+              <li><a href="/dashboard/home">My Dashboard</a></li>
+              <hr>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</div>
+</nav><!-- /.navbar -->

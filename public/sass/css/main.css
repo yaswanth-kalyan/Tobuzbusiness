@@ -1,0 +1,52 @@
+/*
+Error: Invalid CSS after "...ont-weight: 400": expected "{", was ";"
+        on line 380 of main.scss
+
+375: 	h4 {
+376: 		font-weight: 500;
+377: 	}
+378: 	background-color: $background_color_5;
+379: 	color: $color_2 !important;
+380: 	] font-weight: 400;
+381: }
+382: .caption-four {
+383: 	h4 {
+384: 		font-weight: 500;
+385: 	}
+
+Backtrace:
+main.scss:380
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `each'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin/compiler.rb:294:in `watch'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/plugin.rb:109:in `method_missing'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+/home/thrymr/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+/home/thrymr/.rbenv/versions/2.3.1/bin/sass:23:in `load'
+/home/thrymr/.rbenv/versions/2.3.1/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ont-weight: 400\": expected \"{\", was \";\"\A         on line 380 of main.scss\A \A 375: 	h4 {\A 376: 		font-weight: 500;\A 377: 	}\A 378: 	background-color: $background_color_5;\A 379: 	color: $color_2 !important;\A 380: 	] font-weight: 400;\A 381: }\A 382: .caption-four {\A 383: 	h4 {\A 384: 		font-weight: 500;\A 385: 	}"; }

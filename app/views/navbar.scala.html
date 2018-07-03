@@ -1,0 +1,367 @@
+@(appUser : models.AppUser, name:String)
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-trans @if(name == "Dashboard"){nav-bg}">
+@if(name == "Dashboard"){
+  <div class="navbar_dash">
+}
+  <div class="container-fluid d-pdl-75 con_pdl_res data_toggle">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbrand_mrgtop no-padding" href="/"><img src="@routes.Assets.versioned("images/white-logo.png")" class="img img-responsive logo-img" /></a>
+      <span class="dropdown flagdropdown_outside hidden-sm hidden-md hidden-lg"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="@routes.Assets.versioned("images/flags/australia.png")" class="img img-responsive nav-flag-img" /> Aus <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu countryDown dropdown_flagdropdown_outside">
+            @for(country <- models.Country.countryList()){
+              <li><a href="#"><img src="/assets/images/flags/@country.getFlagName()" class="img img-responsive nav-flag-img flagImage" /> @country.getName()</a></li>
+              }
+            <!--   <li><a href="#">Australia</a></li>
+              <li><a href="#">England</a></li> -->
+            </ul>
+        </span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">HOW IT WORKS</a></li>
+        <li><a href="#">BUSINESS FOR SALE</a></li>
+        <li><a href="#">COMMERCIAL FOR SALE</a></li>
+        <li><a href="#">BUYERS/INVESTORS</a></li>
+        <li><a href="#">BROKERS</a></li>
+        <li><a href="#">FRANCHISORS</a></li>
+        <li><a href="#">BUSINESS SERVICES</a></li>
+        <li><a href="#">DISTRESS SALES</a></li>
+        @if(appUser == null){
+        <li><a id="login"><i class="fa fa-sign-in fs-20" aria-hidden="true"></i></a><li>
+        <li><a href-"#" class='no-side-padding hidden-xs'>/</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-plus fs-20" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu register_dropdownmwnu_ipd">
+              <li><a  onclick="register('BUYER');" id="nav_Buyer">As a Buyer</a></li>
+             <li><a onclick="register('SELLER');" id="nav_Seller">As a Seller</a></li>
+             <li><a onclick="register('BROKER');">As a Broker</a></li>
+             <li><a onclick="register('FRANCHISOR');">As a Franchisor</a></li>
+             <li><a onclick="register('BUSINESS ADVISOR');">As a Business Advisor</a></li>
+            </ul>
+          </li>
+        }
+         <li class="dropdown hidden-xs flag_undertoggle"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="@routes.Assets.versioned("images/flags/australia.png")" class="img img-responsive nav-flag-img" /> Aus <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu register_dropdownmwnu_ipd countryDown">
+            @for(country <- models.Country.countryList()){
+              <li><a href="#"><img src="/assets/images/flags/@country.getFlagName()" class="img img-responsive nav-flag-img flagImage" /> @country.getName()</a></li>
+              }
+            <!--   <li><a href="#">Australia</a></li>
+              <li><a href="#">England</a></li> -->
+            </ul>
+        </li>
+        @if(appUser != null && name == "Dashboard"){
+        <li><a href="#">
+              <i><img width="17px" src="@routes.Assets.versioned("images/Asset 21@2x.png")""> </i></i>
+              <span class="label label-danger label_dash">4</span>
+            </a>
+        </li>
+        <li><a href="#">
+              <i><img width="17px" src="@routes.Assets.versioned("images/Asset 22@2x.png")""> </i></i>
+              <span class="label label-warning label_dash">10</span>
+            </a>
+        </li>
+        }
+        @if(appUser != null){
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img  alt="User Image" class="img-circle" width="20px;" src="@routes.Assets.versioned("images/user.jpg")"><span>@appUser.getName()<i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+            <ul class="dropdown-menu">
+            
+              <li><a href="/dashboard/upd_profile">Profile</a></li>
+              <li><a href="/dashboard/home">My Dashboard</a></li>
+              <hr>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+        </li>
+        }
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+    <div class="row mb-20">
+        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+        <form role="search">
+            <div class="input-group">
+                <input type="text" class="form-control cust-search banner_search_input" placeholder="Search here and explore" name="q">
+                <div class="input-group-btn">
+                    <button class="btn btn-default oval-border banner_search_input_btn" type="submit"><i class="fa fa-arrow-right blue-color" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div><!-- /.container -->
+  @if(name == "Dashboard"){
+  </div>
+}
+</nav><!-- /.navbar -->
+
+<!--Signup Modal-->
+<div id="signin" class="modal fade login-signup-modals" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Sign In</h4>
+      </div>
+      <div class="modal-body">
+            <form id="loginform" class="form-horizontal" role="form">
+                    <div style="margin-bottom: 25px;margin-top: 25px;" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/email-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="login-username" type="text" class="form-control" name="email"  placeholder="Enter Registered Email">
+                    </div>
+                    <div style="margin-bottom: 10px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/password-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <div class="input-group pull-right" style="margin-bottom: 15px" >
+                      <a href="#" class="blue-color">Forgot Password</a>
+                    </div>
+                    <input type="hidden" name="userRole" id="login-userRole" value="BUYER"/>
+						<input type="hidden" name="loginFrom" id="login-loginType" value="TOBUZ"/>
+                    <div style="margin-top:10px" class="form-group">
+                        <div class="col-sm-12 controls text-center">
+                        <!--   <a id="btn-fblogin"  class="btn btn-success btn-login">Sign In</a> -->
+                        <input type="submit">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <h4 class="login-or-signup-bar">or Sign In using</h4>
+                        </div>
+                        <div class="btns-social text-center mt-20">
+                          <a href="#" class="fa-facebook"><i class="fa fa-facebook"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                            </fb:login-button></i></a>
+                            
+                            <a href="#" class="fa-linkedin btn-linkedin"><i class="fa fa-linkedin"></i></a>
+
+                            <a class="g-signin2" onclick="ClickLogin()" data-onsuccess="onSignIn" data-theme="dark" data-width="30" data-height="20" data-longtitle="true"></a>
+       
+                            <a href="#" class="fa-google-plus"><i class="fa fa-google-plus"></i></a>
+                           <!--  <a href="/twitter/homeTimeline" class="fa-twitter" ><i class="fa fa-twitter"></i></a> -->
+                        </div>
+                        <div class="col-md-12 text-center register_msg">
+                          <p>Doesn't have an account, <a href="" id="signin_click_here">click here</a> to sign up</p>
+                        </div>
+                        <!-- <div id="status"></div> -->
+                    </div>
+            </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!--Reister Modal-->
+<div id="register" class="modal fade login-signup-modals" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Register</h4>
+      </div>
+      <div class="modal-body">
+            <form id="registerform" class="form-horizontal" role="form">
+                    <div style="margin-bottom: 25px;margin-top: 25px;" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/name-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="register-name" type="text" class="form-control" name="name" value="" placeholder="Name">
+                    </div>
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/email-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="register-email" type="email" class="form-control" name="email" value="" placeholder="Email">
+                    </div>
+                  <!--   <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input id="register-phoneNumber" type="number" class="form-control" name="mobileNumber" value="" placeholder="Phone number">
+                    </div> -->
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/password-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="register-password" type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <div style="margin-bottom: 10px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/password-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="register-confirm-password" type="password" class="form-control" name="cpassword" placeholder="Confirm Password">
+                    </div>
+                    <div class="cpathcha">
+                        <div id="recaptcha_widget" style="display:none">
+
+                        <div class="control-group">
+                            <label class="control-label"></label>
+                            <div class="controls">
+                                <a id="recaptcha_image" href="#" class="thumbnail"></a>
+                                <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
+                            </div>
+                        </div>
+
+                           <div class="control-group">
+                               <label class="recaptcha_only_if_image control-label">Enter the words above:</label>
+                              <label class="recaptcha_only_if_audio control-label">Enter the numbers you hear:</label>
+
+                              <div class="controls">
+                                  <div class="input-append">
+                                      <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="input-recaptcha" />
+                                      <a class="btn" href="javascript:Recaptcha.reload()"><i class="icon-refresh"></i></a>
+                                      <a class="btn recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio')"><i title="Get an audio CAPTCHA" class="icon-headphones"></i></a>
+                                      <a class="btn recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image')"><i title="Get an image CAPTCHA" class="icon-picture"></i></a>
+                                    <a class="btn" href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
+                                  </div>
+                              </div>
+                        </div>
+
+                    </div>
+						<input type="hidden" name="role" id="register-userRole"/>
+						<input type="hidden" name="loginType" id="register-loginType" value="TOBUZ"/>
+                    </div>
+                    <div style="margin-top:10px" class="form-group">
+                        <div class="col-sm-12 controls text-center">
+                          <a id="btn-fblogin " href="#" class="btn btn-success btn-register">Register</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <h4 class="login-or-signup-bar">or Register using</h4>
+                        </div>
+
+                        <div class="btns-social text-center mt-20">
+                            <a href="#" class="fa-facebook"><i class="fa fa-facebook"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                            </fb:login-button></i></a>
+                            
+                            <a href="#" class="fa-linkedin btn-linkedin"><i class="fa fa-linkedin"></i></a>
+
+                            <a class="g-signin2 regGoogle+" onclick="ClickLogin()" data-onsuccess="onSignIn" data-theme="dark" data-width="30" data-height="20" data-longtitle="true"></a>
+                            <a href="#" class="fa-google-plus"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <div class="col-md-12 text-center register_msg">
+                          <p>Already have an account, <a href="#" id="register_click_here">click here</a> to login</p>
+                        </div>
+
+                    </div>
+            </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!--Signup Modal-->
+<div id="address" class="modal fade login-signup-modals" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Address</h4>
+      </div>
+      <div class="modal-body">
+            <form id="addressForm" class="form-horizontal" role="form">
+
+                    <div style="margin-bottom: 25px;margin-top: 25px;">
+                       <P class="confirm_link"> We have sent a confirmation link to example@@example.com.Please check your inbox</P>
+                    </div>
+                    <div style="margin-bottom: 25px;;margin-top: 25px;" class="input-group">
+                         <span class="input-group-addon">
+                         	<select class="selectpicker" name="mobileDerivedCountryId" id="mobileDerivedCountryId">
+                         	@for(country <- models.Country.countryList()){
+							<option value="@country.getId()" data-iso="@country.getIsoCode()">@country.getDialingCode()</option>
+							}
+                        </select>
+                         </span>
+
+                        <input id="register-phoneNumber" type="number" class="form-control" name="mobileNumber" value="" placeholder="Phone number">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/city-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <!-- <input id="address-city" type="text" class="form-control" name="cityId" value="" placeholder="City"> -->
+                        <select id="address-city" class="form-control" name="cityId">
+                        <option value="">City</option>
+                        @for(city <- models.City.cityList()){
+                        <option value="@city.getId()">@city.getName()</option>
+                        }
+                        </select>
+                    </div>
+                     @for(city <- models.City.cityList()){
+                         <input type="hidden" id="address-city-state@city.getId()" data-state-name="@city.getState().getName()" data-state-id="@city.getState().getId()"/>
+                        <input type="hidden" id="address-city-country@city.getId()" data-country-name="@city.getCountry().getName()" data-country-id="@city.getCountry().getId()"/>
+                        }
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/state-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="address-sate-name" type="text" class="form-control" name="stateName" placeholder="State">
+                         <input id="address-sate-id" type="hidden" class="form-control" name="stateId" placeholder="State">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/country-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="address-Country-name" type="text" class="form-control" name="countryName" placeholder="Country">
+                         <input id="address-Country-id" type="hidden" class="form-control" name="countryId" placeholder="Country">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/address-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="address-Address" type="text" class="form-control" name="addressDescription" placeholder="Address">
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><img ng-src="@routes.Assets.versioned("images/pincode-icon.png")" class="img img-rresponsive img-icon" /></span>
+                        <input id="address-Zipcode" type="text" class="form-control" name="pincode" placeholder="Zipcode">
+                    </div>
+                    <div style="margin-bottom: 30px" class="input-group">
+                         <label>
+                                <input type="checkbox"  name="allowBuyerToContact">
+                                Do you want to share contact details with Seller or Broker
+                        </label>
+                    </div>
+                    <input type="hidden" name="appUserId" id="address-userId" value="1"/>
+                    <div style="margin-top:0px" class="form-group">
+                        <div class="col-sm-12 controls text-center">
+                          <input type="button" href="#" class="btn btn-success btn-address" value="Submit">
+                        </div>
+                    </div>
+            </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+
+$scope.submitLogin=function(){
+	var formData={};
+	formData.email=$scope.email;
+	formData.password=$scope.password;
+	console.log("In login Form");
+	console.log(formData)
+	alert(formData)
+	
+}
+
+  $(document).ready(function() {
+    $('.countryDown li a').click(function(event) {
+        var option = $(event.target).text();
+        //alert($(this).find(".flagImage").attr('src'));
+        var imageSource = $(this).find(".flagImage").attr('src');
+        $(event.target).parents('.dropdown').find('.dropdown-toggle')
+        .html('<img src="'+imageSource+'" class="img img-responsive nav-flag-img"/>'+option+' <span class="caret"></span>');
+    });
+});
+  
+  
+  $(document).on('click', '#signin_click_here', function() {
+	  $("#signin").modal('hide');
+	  $('#register').modal('show');
+  });
+  $(document).on('click', '#register_click_here', function() {
+	  $("#register").modal('hide');
+	  $('#signin').modal('show');
+  });
+</script>

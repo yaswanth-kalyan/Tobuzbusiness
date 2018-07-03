@@ -1,0 +1,230 @@
+.blue-background {
+  background: #3fa3e4;
+  background: -moz-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #3fa3e4), color-stop(50%, #3f7ce4));
+  background: -webkit-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -o-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -ms-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: linear-gradient(to right, #3fa3e4 0%, #3f7ce4 50%);
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+}
+a {
+  color: #fff !important;
+}
+a:hover,
+a:focus,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #fff !important;
+  opacity: 0.7;
+}
+blockquote {
+  border: none;
+  margin-bottom: -30px;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 0.4em;
+}
+blockquote p:before {
+  content: "\201C";
+  font-weight: bold;
+  font-size: 150px;
+  color: rgba(238, 238, 238, 0.25);
+  position: absolute;
+  top: 0px;
+  left: -100px;
+  font-family: 'Georgia';
+}
+blockquote p:after {
+  content: "\201D";
+  font-weight: bold;
+  font-size: 150px;
+  color: rgba(238, 238, 238, 0.25);
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  font-family: 'Georgia';
+}
+.pdx-75 {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+.mt-120 {
+  margin-top: 120px;
+}
+.white-color {
+  color: #ffffff;
+}
+.no-padding {
+  padding: 0px;
+}
+.no-right-padding {
+  padding-right: 0px;
+}
+.no-left-padding {
+  padding-left: 0px;
+}
+.no-margin {
+  margin: 0px;
+}
+.pdy-15p {
+  padding-top: 15%;
+}
+.pdy-5 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.pdx-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.pdx-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.pdx-25 {
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+.pdl-5 {
+  padding-left: 5px;
+}
+.pdt-20 {
+  padding-top: 20px;
+}
+.pdt-40 {
+  padding-top: 40px;
+}
+.pdb-20 {
+  padding-bottom: 20px;
+}
+.pd-20 {
+  padding: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-75 {
+  margin-top: 75px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.width-50p {
+  width: 50%;
+}
+.circled-img {
+  border-radius: 100%;
+}
+.media-heading {
+  margin-top: 10px;
+}
+.oval-border {
+  border-radius: 25px;
+}
+.rounded-border {
+  border-radius: 100%;
+}
+.brt-white {
+  border-right: 1px solid #ffffff;
+}
+.font-normal {
+  font-weight: normal;
+}
+.blue-bg {
+  background: #3fa3e4;
+  background: -moz-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #3fa3e4), color-stop(50%, #3f7ce4));
+  background: -webkit-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -o-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: -ms-linear-gradient(left, #3fa3e4 0%, #3f7ce4 50%);
+  background: linear-gradient(to right, #3fa3e4 0%, #3f7ce4 50%);
+  color: #fff !important;
+}
+.blue-color {
+  color: #499fff;
+}
+.grey-color {
+  color: #a9a9a9;
+}
+.main-bgc {
+  height: 100%;
+}
+.main-links {
+  padding-left: 20px;
+  margin: 10px;
+  border-left: 1px solid #ffffff;
+}
+.cust-searchbar {
+  margin: -20px;
+}
+.cust-search {
+  border-radius: 25px;
+}
+.icon-rounded {
+  border-radius: 100%;
+  border: 1px solid #ffffff;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #fff !important;
+  padding: 0;
+  padding-top: 2px;
+  margin-right: 10px;
+}
+.contact-btn {
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  color: #fff !important;
+  border-radius: 25px;
+}
+.contact-icon {
+  padding: 0;
+  width: 120px;
+  height: 25px;
+}
+.flag-section {
+  background-color: #eeeeee;
+  margin-bottom: 50px;
+}
+.flag-width {
+  width: 14%;
+}
+.flag-width p {
+  font-size: 11px;
+  padding-top: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

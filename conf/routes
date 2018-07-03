@@ -1,0 +1,90 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                                             controllers.HomeController.index
+GET     /dashboard/home                               controllers.HomeController.dashboard
+GET     /dashboard/listings                           controllers.HomeController.listings
+GET     /dashboard/listings/listing_form              controllers.HomeController.listingForm
+GET     /dashboard/favorites                          controllers.HomeController.favorites
+GET     /dashboard/saved_search                       controllers.HomeController.savedSearch
+GET     /dashboard/finalListings           			  controllers.HomeController.searchList
+GET     /dashboard/messages                           controllers.HomeController.messages
+GET     /dashboard/upd_profile                        controllers.HomeController.updatedProfile
+GET		/timezone/:offset			                  controllers.HomeController.updateSessionWithTimezone(offset : String)
+GET		/files											controllers.HomeController.saveFile()
+GET     /twitter/homeTimeline                         controllers.Twitter.homeTimeline()
+GET     /twitter/auth                                 controllers.Twitter.auth()
+
+# An example controller showing how to use dependency injection
+GET     /count                          controllers.CountController.count
+
+# An example controller showing how to write asynchronous code
+GET     /message                       controllers.AsyncController.message
+
+
+################################ RegistrationController ######################################
+
+POST	/register					  controllers.RegistrationController.registerUser()
+POST	/update-location		      controllers.RegistrationController.registerUserAddress()
+POST	/update-package				  controllers.RegistrationController.updateTobuzBusinessPackage()
+
+
+################################ LoginController ######################################
+
+POST	/login					      controllers.LoginController.login()
+GET		/logout						  controllers.LoginController.logout()
+GET		/dashboard/home					  controllers.LoginController.dashboard()
+POST	/password-reset			      controllers.LoginController.updatePasswordRequest()
+
+
+GET		/packages					controllers.TobuzPackageController.getPackageDetailsByCountry()
+GET     /seller/packages 			controllers.TobuzPackageController.getPackageDetailsForSeller()
+
+
+################################ BusinessListingController ###################################
+
+POST		/business-listing/add					controllers.BusinessListingController.saveBusinessListing()
+
+
+################################ BusinessListingController ###################################
+
+POST		/business-advert/add					controllers.BusinessAdvertController.createBusinessAdvert()
+GET		/category-list/:listingType							controllers.BusinessAdvertController.getCategoryList(listingType : String)
+GET		/sub-category-list/:catId							controllers.BusinessAdvertController.getSubCategoryList(catId : Long)
+
+
+
+
+############################### PublicController ########################################
+GET		/country-data						controllers.PublicController.getCountryData()
+GET		/city-data								controllers.PublicController.getCityData()
+GET		/state-data/:countryId								controllers.PublicController.getStateData(countryId : Long)
+GET		/city-data-by-state/:stateId								controllers.PublicController.getCityDataByState(stateId : Long)
+GET		/area-metrics											controllers.PublicController.getLoggedInUserCountryMetrics()
+POST		/save-image/:id												controllers.PublicController.saveFile(id : Long)
+
+############################## UserController ########################################
+GET		/user-data											controllers.UserController.getLoggedInUserProfileData()
+POST		/update-user-profile									controllers.UserController.updateUserProfile()
+
+
+
+
+
+
+############################# MasterDataController #################################
+GET		/insert-countries						controllers.MasterDataController.insertCountryDetails()
+GET		/insert-states						    controllers.MasterDataController.insertStates()
+GET		/insert-cities						    controllers.MasterDataController.insertCities()
+GET		/insert-package						    controllers.MasterDataController.insertBusinessPackage()
+GET		/insert-package-service				    controllers.MasterDataController.insertTobuzPackageService()
+GET		/insert-business-features				controllers.MasterDataController.inserBusinessFeatures()
+
+############################# sellerDashboard #################################
+GET     /seller/dashboard/home                               controllers.HomeController.sellerDashboard()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

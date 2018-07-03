@@ -1,0 +1,28 @@
+@()
+@main(""){
+<form id="save-file1" enctype= multipart/form-data>
+<input type="file" name="image">
+<input type="button" class="save-file" value="saveFile"/>
+</form>
+<image class="image-tag" src="https://tobuz-dev.s3.amazonaws.com/1509612465275Screen_Shot_2017-10-24_at_10.33.52_PM.png" wisth="50px" height="50px"/>
+}
+<script>
+$(document).on('click','.save-file',function(){
+	var formData = new FormData($('#save-file1')[0]);
+	$.ajax({
+        url: '/save-image/0',
+        type: 'POST',
+        data: formData,
+        async: false,
+        success: function (resultData) {
+             console.log(resultData);
+             $('.image-tag').attr("src",resultData);
+                
+         },
+         cache: false,
+         contentType: false,
+         processData: false
+       });
+});
+
+</script>
